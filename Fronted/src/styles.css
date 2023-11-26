@@ -1,0 +1,58 @@
+body{
+ font-family: sans-serif;
+}
+.container{
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.common-form{
+ text-align:center;
+ display:flex;
+ margin:auto;
+ flex-direction: column;
+ width:300px;
+}
+
+.form-input{
+  height:35px;
+  margin-bottom:20px;
+  padding-left:10px;
+  border:1px solid rgb(0, 0, 0);
+  color:rgb(0, 0, 0);
+
+}
+
+.form-button{
+  height:35px;
+  border:1px solid rgb(0, 0, 0);
+  cursor:pointer;
+}
+
+.error-p{
+  color:red;
+}
+.p-message{
+  color:green;
+  text-align: center;
+}
+
+.carousel-caption{
+  background-color: #00000082;
+  border-radius: 5px;
+}
+
+.carousel-control-next-icon, .carousel-control-prev-icon{
+  background-color: #00000082; ;
+  border:5px;
+}
+
+.invalid-input{
+  color:red;
+  font-size:12px;
+  margin-top:-20px;
+}
+
+button:disabled{
+  cursor:not-allowed;
+}

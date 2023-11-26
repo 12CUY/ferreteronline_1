@@ -1,0 +1,29 @@
+  <!--Login -->
+  <div *ngIf="showLogin" class="login">
+    <h1>Login de Vendedor</h1>
+    <p class="error-p">{{authError}}</p>
+    <form #vendedorLogin="ngForm" (ngSubmit)="login(vendedorLogin.value)" class="common-form" required>
+      <input class="form-input" name="email" type="email" placeholder="Ingresa tu Correo" ngModel #email="ngModel" required email>
+      <p class="invalid-input"><span *ngIf="email.invalid && email.touched">Porfavor Ingresa un Correo</span></p>
+      <input class="form-input" name="password" ngModel  type="password" placeholder="Ingresa tu Contraseña"  minlenght="5" maxlength="8" ngModel #password="ngModel" required>
+      <p class="invalid-input"><span *ngIf="password.invalid && password.touched">Porfavor Ingresa un Clave</span></p>
+      <button [disabled]="vendedorLogin.invalid" class="form-button btn btn-primary">Login</button>
+      <a class="auth-toggle-link" (click)="openSignUp()">No tienes una cuenta? Haz click para crear una </a>
+    </form>
+  </div>
+  
+  <!--Registro-->
+  <div class="seller-auth">
+    <div *ngIf="!showLogin" class="signup">
+      <h1>Registro de Vendedor</h1>
+      <form #vendedorSignUp="ngForm" (ngSubmit)="signUp(vendedorSignUp.value)" class="common-form">
+        <input class="form-input" ngModel name="name" type="text" placeholder="Ingresa tu Nombre" minlenght="5" maxlength="20" required>
+        <input class="form-input" name="email" type="email" placeholder="Ingresa tu Correo" ngModel #email="ngModel" required email>
+        <p class="invalid-input"><span *ngIf="email.invalid && email.touched">Dirección de Correo Invalida</span></p>
+        <input class="form-input" name="password" type="password" placeholder="Ingresa tu Contraseña" minlenght="5" maxlength="8" ngModel #password="ngModel" required >
+        <p class="invalid-input"><span *ngIf="password.invalid && password.touched">Porfavor Ingresa un Clave</span></p>
+        <button class="form-button"(click)="openLogin()" class="btn btn-primary">Registrarse</button>
+        <a  class="auth-toggle-link" (click)="openLogin()">Tienes ya una cuenta? Pulsa el botón de ingresar </a>
+      </form>
+    </div>
+</div>

@@ -1,0 +1,183 @@
+{
+  "vendedor": [
+    {
+      "name": "Renato Escobar",
+      "password": "12345",
+      "email": "alanescobar.p@gmail.com",
+      "id": 1
+    },
+    {
+      "name": "Paul Ponce",
+      "password": "12345",
+      "email": "pap@gmail.com",
+      "id": 2
+    }
+  ],
+  "products": [
+    {
+      "name": "CLAVOS PARA MADERA",
+      "price": "5.92",
+      "color": "Gray",
+      "category": "Carpinteria",
+      "description": "Clavos para madera varias medidas, fundas de 1 Kilo",
+      "image": "https://www.lacasadelcarpintero.com.ec/wp-content/uploads/2021/07/CLAG-CC-416x416.jpg",
+      "id": 2
+    },
+    {
+      "name": "SERRUCHO",
+      "price": "15.00",
+      "color": "Orange",
+      "category": "Herramientas",
+      "description": "Serrucho económico de 22″",
+      "image": "https://promart.vteximg.com.br/arquivos/ids/403607-1000-1000/18537.jpg?v=637177386021470000",
+      "id": 3
+    },
+    {
+      "name": "Martillo",
+      "price": "10",
+      "color": "Black",
+      "category": "Herramientas",
+      "description": "Martillo Pequeño",
+      "image": "https://www.servillavespaez.com/wp-content/uploads/2017/08/MA-02-A-458x458.jpg",
+      "id": 4
+    },
+    {
+      "name": "Taladro Petrul",
+      "price": "30",
+      "color": "Yellow",
+      "category": "Herramientas",
+      "description": "Taladro Petrul ",
+      "image": "https://cdn.shopify.com/s/files/1/0305/0550/0731/products/TaladroPretulMediaFoto1_1024x1024@2x.jpg?v=1625272412",
+      "id": 5
+    },
+    {
+      "name": "Taladro Bosh",
+      "price": "30",
+      "color": "Blue",
+      "category": "Herramientas",
+      "description": "Taladro Bosh",
+      "image": "https://kywitiendaenlinea.com/wp-content/uploads/2020/05/694182.jpg",
+      "id": 6
+    }
+  ],
+  "users": [
+    {
+      "name": "Angelo Diaz",
+      "email": "angelodiaz@gmail.com",
+      "password": "12345",
+      "id": 1
+    },
+    {
+      "name": "Alan Escobar",
+      "email": "renatoparreno.fcb@gmail.com",
+      "password": "12345",
+      "id": 2
+    },
+    {
+      "name": "Juan Perez",
+      "email": "juan@gmail.com",
+      "password": "12345",
+      "id": 3
+    }
+  ],
+  "cart": [
+    {
+      "name": "CLAVOS PARA MADERA",
+      "price": "5.92",
+      "color": "Gray",
+      "category": "Carpinteria",
+      "description": "Clavos para madera varias medidas, fundas de 1 Kilo",
+      "image": "https://www.lacasadelcarpintero.com.ec/wp-content/uploads/2021/07/CLAG-CC-416x416.jpg",
+      "quantity": 1,
+      "productId": 2,
+      "userId": null,
+      "id": 1
+    },
+    {
+      "name": "CLAVOS PARA MADERA",
+      "price": "5.92",
+      "color": "Gray",
+      "category": "Carpinteria",
+      "description": "Clavos para madera varias medidas, fundas de 1 Kilo",
+      "image": "https://www.lacasadelcarpintero.com.ec/wp-content/uploads/2021/07/CLAG-CC-416x416.jpg",
+      "quantity": 1,
+      "productId": 2,
+      "userId": null,
+      "id": 2
+    },
+    {
+      "name": "CLAVOS PARA MADERA",
+      "price": "5.92",
+      "color": "Gray",
+      "category": "Carpinteria",
+      "description": "Clavos para madera varias medidas, fundas de 1 Kilo",
+      "image": "https://www.lacasadelcarpintero.com.ec/wp-content/uploads/2021/07/CLAG-CC-416x416.jpg",
+      "quantity": 1,
+      "productId": 2,
+      "userId": null,
+      "id": 3
+    },
+    {
+      "name": "CLAVOS PARA MADERA",
+      "price": "5.92",
+      "color": "Gray",
+      "category": "Carpinteria",
+      "description": "Clavos para madera varias medidas, fundas de 1 Kilo",
+      "image": "https://www.lacasadelcarpintero.com.ec/wp-content/uploads/2021/07/CLAG-CC-416x416.jpg",
+      "quantity": 1,
+      "productId": 2,
+      "userId": null,
+      "id": 7
+    },
+    {
+      "name": "CLAVOS PARA MADERA",
+      "price": "5.92",
+      "color": "Gray",
+      "category": "Carpinteria",
+      "description": "Clavos para madera varias medidas, fundas de 1 Kilo",
+      "image": "https://www.lacasadelcarpintero.com.ec/wp-content/uploads/2021/07/CLAG-CC-416x416.jpg",
+      "quantity": 1,
+      "userId": 3,
+      "productId": 2,
+      "id": 9
+    },
+    {
+      "name": "Martillo",
+      "price": "10",
+      "color": "Black",
+      "category": "Herramientas",
+      "description": "Martillo Pequeño",
+      "image": "https://www.servillavespaez.com/wp-content/uploads/2017/08/MA-02-A-458x458.jpg",
+      "quantity": 2,
+      "userId": 3,
+      "productId": 4,
+      "id": 10
+    }
+  ],
+  "orders": [
+    {
+      "email": "alanescobar.p@gmail.com",
+      "address": "La Magdalena",
+      "contact": "0987576897",
+      "totalPrice": 23.5,
+      "userId": 1,
+      "id": 1
+    },
+    {
+      "email": "alanescobar.p@gmail.com",
+      "address": "La Magdalena",
+      "contact": "0987576897",
+      "totalPrice": 13.512,
+      "userId": 1,
+      "id": 2
+    },
+    {
+      "email": "juan@gmail.com",
+      "address": "La Magdalena",
+      "contact": "0987576897",
+      "totalPrice": 35.512,
+      "userId": 3,
+      "id": 3
+    }
+  ]
+}

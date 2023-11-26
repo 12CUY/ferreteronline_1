@@ -1,0 +1,85 @@
+.product-image{
+  width: 100%;
+  height: 400px;
+  object-fit: contain;
+}
+.product-color{
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-left: 46%;
+}
+.product-details{
+  margin: 70px 30px;
+  border-radius: 15px;
+  font-family: 'Roboto Slab';
+
+}
+h1{
+text-align: center;
+font-size: 40px;
+
+}
+.texto h6{
+  font-size: 25px;
+}
+.cantidad{
+  display: flex;
+  padding: 20px 45%;
+  height: 100px;
+  width: 100px;
+}
+.cantidad button{
+  padding:15px;
+  background-color: #021730; 
+  color: white;
+  border-radius: 10px;
+}
+.cantidad input{
+  width: 50px;
+  padding: 10px;
+  border-radius: 20px;
+}
+
+.button-add {
+  background-color: #4CAF50;
+  border-radius: 10px;
+  color: white;
+  padding: 7px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  width: 200px;
+}
+.button-comprar {
+  background-color: #F9CD16 ;
+  border-radius: 10px;
+  color: white;
+  padding: 7px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  width: 200px;
+}
+.button-eliminar {
+  color: white;
+  padding: 7px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border: 1px solid black;
+  width: 200px;
+}
+.button1:hover {
+  color:black;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}

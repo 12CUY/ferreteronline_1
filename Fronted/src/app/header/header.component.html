@@ -1,0 +1,42 @@
+<nav class="nav-arriba">
+  <a routerLink="/"><img src="https://http2.mlstatic.com/storage/mshops-appearance-api/images/58/436626158/logo-2022090210153291700.png"></a>
+  <div *ngIf="menuType!=='vendedor'" class="nav-search">
+    <input type="text" #searchInput (keyup)="searchProduct($event)" (blur)="hideSearch()"placeholder="Busqueda de Productos">
+    <button (click)="submitSearch(searchInput.value)" class="btn btn-warning">Buscar</button>
+    <ul class="suggested-result" *ngIf="searchResult">
+      <li *ngFor="let item of searchResult">
+        <a (mousedown)="redirectToDetails(item.id)">{{item.name}}</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<nav class="nav">
+  <div [ngSwitch]="menuType" style="padding: 1%;">
+    <ul *ngSwitchCase="'default'">
+      <li><a routerLink="">Home</a></li>
+      <li><a routerLink="vendedor-auth"><span class="glyphicon glyphicon-user"></span> Login-Vendedor</a></li>
+      <li><a (click)="logOut()">Logout</a></li>
+      <li><a routerLink="/user-auth"><span class="glyphicon glyphicon-log-in"></span> Login-Cliente</a></li>
+      <li><a routerLink="estadistica">Estadistica</a></li>
+      <li><a href="#">Carrito({{cartItems}})</a></li>
+      <li><a routerLink="/"><img src="https://yavirac.edu.ec/img/Logo%20Yavirac.png" style="margin: -20px 0px -20px 625px; width:130px; height:60px"></a></li>
+    </ul>
+
+    <ul *ngSwitchCase="'user'">
+      <li><a routerLink="">Home</a></li>
+      <li><a routerLink="user-auth">{{userName}}</a></li>
+      <li><a (click)="userlogOut()">Logout</a></li>
+      <li><a routerLink="mis-ordenes">Mis Ordenes</a></li>
+      <li><a [routerLink]="cartItems>0?'cart-page':null">Carrito({{cartItems}})</a></li>
+    </ul>
+
+
+    <ul *ngSwitchCase="'vendedor'">
+      <li><a routerLink="vendedor-add-product">Añadir Productos</a></li>
+      <li><a routerLink="vendedor-home">Lista de Productos</a></li>
+      <li><a (click)="logOut()">Logout</a></li>
+      <li><a routerLink="vendedor-auth">{{vendedorName}}</a></li>
+    </ul>
+  </div>
+</nav>
+

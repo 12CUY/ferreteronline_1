@@ -1,0 +1,37 @@
+<br>
+<br>
+<div class="product-list">
+  <h1>Lista de Productos</h1>
+  <p class="p-message">{{productMessage}}</p>
+  <button class="btn btn-success" routerLink="/vendedor-add-product">Agregar un Producto</button>
+  <br>
+  <br>
+  <table>
+    <thead>
+      <tr>
+        <th>Imagen</th>
+        <th>Nombre</th>
+        <th>Precio</th>
+        <th>Color</th>
+        <th>Categoria</th>
+        <th>Descripcion</th>
+        <th>Acción</th>
+      </tr>
+    </thead>
+  <tbody>
+    <tr *ngFor="let item of productList">
+      <td><img src="{{item.image}}"/></td>
+      <td>{{item.name}}</td>
+      <td>{{item.price}}</td>
+      <td>{{item.color}}</td>
+      <td>{{item.category}}</td>
+      <td>{{item.description}}</td>
+      <td>
+        <fa-icon (click)="deleteProduct(item.id)" [icon]="icon" routerLink="/"></fa-icon>
+        <a class="adjust-update-link" routerLink="/vendedor-update-product/{{item.id}}"><fa-icon [icon]="editIcon"></fa-icon></a>
+    </tr>
+  </tbody>
+  </table>
+  <br>
+  <br>
+</div>
