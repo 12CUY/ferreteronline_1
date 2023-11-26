@@ -1,0 +1,69 @@
+/* Basic styling for the footer */
+.footer-container {
+    background-color: #021730;
+    color: white;
+    padding: 20px 0;
+  }
+  
+  .container {
+    max-width: 1140px;
+    margin: 0 auto;
+  }
+  
+  .row {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  /* Logo styling */
+  .logo-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .logo-img {
+    width: 350px;
+    height: 80px;
+  }
+  
+  /* Slogan styling */
+  .slogan {
+    text-align: center;
+  }
+  
+  /* Social icons styling */
+  .social-icons {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .social-icons a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    margin: 0 10px;
+  }
+  
+  /* Contact section styling */
+  .contact-heading {
+    text-transform: uppercase;
+    margin-bottom: 15px;
+  }
+  
+  .contact-list {
+    list-style: none;
+  }
+  
+  .contact-list p {
+    margin: 0;
+  }
+  
+  /* Copyright section styling */
+  .copyright-section {
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.2);
+    color: white;
+  }

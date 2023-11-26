@@ -20,7 +20,7 @@ import { FooterComponent } from './footer/footer.component';
 import { CartPageComponent } from './cart-page/cart-page.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { MisOrdenesComponent } from './mis-ordenes/mis-ordenes.component';
-import { EstadisticaComponent } from './estadistica/estadistica.component';
+import { TextoPipe } from './pipes/texto.pipe';
 
 @NgModule({
   declarations: [
@@ -38,7 +38,7 @@ import { EstadisticaComponent } from './estadistica/estadistica.component';
     CartPageComponent,
     CheckoutComponent,
     MisOrdenesComponent,
-    EstadisticaComponent
+    TextoPipe
   ],
   imports: [
     BrowserModule,

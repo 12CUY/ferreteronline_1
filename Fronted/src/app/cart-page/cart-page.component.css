@@ -1,40 +1,45 @@
-.cart-page{
-  margin-top:40px;
-  margin-bottom:60px;
-}
-.cart-page h1{
-  text-align: center;
-}
-.details{
-  border:1px solid #ddd; ;
-}
-.details img{
-  height: 100px;
-}
-.details ul{
-  justify-content: space-between;
+/* Estilos para el contenedor principal */
+.cart-page {
+  display: flex;
+  justify-content: center;
   align-items: center;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  list-style-type: none;
-  margin-bottom: 20px;
-  border-bottom: 1px solid #ddd;
-  padding-bottom: 15px;
+  min-height: 60vh;
 }
-.summary{
-  margin-top: 20px;
-  margin-bottom: 20px;
+
+/* Estilos para el contenedor col-sm-4 */
+.col-sm-4 {
+  text-align: center;
+  max-width: 300px;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #ffc107;
+  border-radius: 20px;
+  box-shadow: 0px 10px 12px rgba(0, 0, 0, 0.356);
 }
-.summary h3{
+
+/* Estilos para las imágenes */
+img {
+  width: 100%;
+  max-width: 100px; /* Ajustado el ancho máximo de la imagen */
+  height: auto; /* Se mantiene la proporción de la imagen */
+  border-radius: 10px;
+  box-shadow: 0px 10px 15px 1px rgba(0, 0, 0, 0.267);
+  margin-bottom: 10px; /* Espacio entre imágenes */
+}
+
+/* Estilos para el contenedor carrito-1 */
+.carrito-1 {
+  margin: 10px;
+  padding: 15px;
+  background-color: #ffc107;
+  box-shadow: 0px 10px 12px rgba(0, 0, 0, 0.356);
+
+  border-radius: 10px;
+}
+
+.carrito-1 h1 {
   text-align: center;
 }
-.summary ul{
-  list-style-type: none;
-  padding: 5%;
-  border:1px solid #ddd;
-}
-.summary ul li{
-  display: flex;
-  justify-content: space-between;
-}
+
+

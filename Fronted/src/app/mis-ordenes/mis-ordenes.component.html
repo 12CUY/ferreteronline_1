@@ -1,37 +1,27 @@
-<div class="my-orders">
+
+<div class="ordenes-1">
   <h1>Mis Ordenes</h1>
-  <div class="row">
-  <div class="col-sm-2">
-    <span>Orden</span>
-  </div>
-  <div class="col-sm-2">
-    <span>Orden Id</span>
-  </div>
-  <div class="col-sm-2">
-    <span>Precio</span>
-  </div>
-  <div class="col-sm-2">
-    <span>Estado</span>
-  </div>
-  <div class="col-sm-2">
-    <span>Action</span>
-  </div>
-  <div class="row order-data" *ngFor="let order of orderData">
-   <div class="col-sm-2">
-     <img class="order-img" src="https://static.vecteezy.com/system/resources/previews/001/838/910/non_2x/truck-with-cart-and-boxes-delivery-service-free-vector.jpg">
-   </div>
-   <div class="col-sm-2">
-    <span>#{{order.id}}</span>
-  </div>
-  <div class="col-sm-2">
-    <span>{{order.totalPrice}}</span>
-  </div>
-  <div class="col-sm-2">
-    <span>En Progreso</span>
-  </div>
-  <div class="col-sm-2">
-    <span><button class="btn btn-danger"(click)="cancelOrder(order.id)">Cancelar Orden</button></span>
-  </div>
-  </div>
+  <div class="table-responsive">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Orden</th>
+        <th># Orden</th>
+        <th>Precio</th>
+        <th>Estado</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let order of orderData">
+      <tr>
+        <td><img class="order-img" src="https://static.vecteezy.com/system/resources/previews/001/838/910/non_2x/truck-with-cart-and-boxes-delivery-service-free-vector.jpg"></td>
+        <td>#{{order.id}}</td>
+        <td> {{order.totalPrice}}</td>
+        <td><marquee behavior="alternate">En porgreso</marquee></td>
+        <td><button class="btn btn-danger"(click)="cancelOrder(order.id)">Cancelar Orden</button></td>
+      </tr>
+    </tbody>
+  </table>
 </div>
+
 </div>

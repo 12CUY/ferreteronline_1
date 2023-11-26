@@ -45,6 +45,7 @@ ngOnInit(): void {
   logOut(){
     localStorage.removeItem('vendedor');
     this.route.navigate(['/']);
+    
   }
   userlogOut(){
     localStorage.removeItem('user');

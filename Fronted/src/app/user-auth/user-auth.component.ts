@@ -15,7 +15,7 @@ export class UserAuthComponent implements OnInit {
  ngOnInit(): void {
   this.user.userAuthReload();
  }
-
+// usar sweetalert
  signUp(data:SignUp){
    this.user.userSignUp(data);
  }
