@@ -15,8 +15,8 @@
     <tbody *ngFor="let order of orderData">
       <tr>
         <td><img class="order-img" src="https://static.vecteezy.com/system/resources/previews/001/838/910/non_2x/truck-with-cart-and-boxes-delivery-service-free-vector.jpg"></td>
-        <td>#{{order.id}}</td>
-        <td> {{order.totalPrice}}</td>
+        <td># {{order.id}}</td>
+        <td>$ {{order.totalPrice}}</td>
         <td><marquee behavior="alternate">En porgreso</marquee></td>
         <td><button class="btn btn-danger"(click)="cancelOrder(order.id)">Cancelar Orden</button></td>
       </tr>

@@ -1,6 +1,8 @@
+<!-- Sección del carrito de compras -->
 <div class="carrito-1">
   <h1>Mi Carrito</h1>
   <div class="table-responsive">
+    <!-- Tabla que muestra los detalles de los productos en el carrito -->
     <table class="table table-hover">
       <thead>
         <tr>
@@ -12,59 +14,56 @@
         </tr>
       </thead>
       <tbody>
+        <!-- Iteración sobre los elementos del carrito para mostrar cada producto -->
         <tr *ngFor="let cart of cartData">
           <td><img src="{{ cart.image }}" /></td>
           <td>{{ cart.name }}</td>
-          <td>{{ cart.price }}</td>
+          <td>$ {{ cart.price }}</td>
           <td>{{ cart.quantity }}</td>
-          <td>          <button
-            class="btn btn-danger"
-            (click)="removeToCart(cart.id)"
-            routerLink="/"
-          >
-            Eliminar
-          </button></td>
+          <!-- Botón para eliminar un producto del carrito -->
+          <td>
+            <button
+              class="btn btn-danger"
+              (click)="removeToCart(cart.id)"
+              routerLink="/"
+            >
+              Eliminar
+            </button>
+          </td>
         </tr>
       </tbody>
     </table>
   </div>
 </div>
 
-  <div class="cart-page">
-    <div class="col-sm-4 summary">
-      <h3>Total de Productos</h3>
-      <div class="table-responsive">
+<!-- Sección de la página del carrito -->
+<div class="cart-page">
+  <div class="col-sm-4 summary">
+    <h3>Total de Productos</h3>
+    <div class="table-responsive">
+      <!-- Tabla que muestra el resumen de precios -->
       <table class="table table-hover">
-              <tbody>
-                <tr>
-                  <td>Precio</td>
-                  <td>{{ priceSummary.price }}</td>
-                </tr>
-                <tr>
-                  <td>Iva</td>
-                  <td>{{ priceSummary.iva }}</td>
-                </tr>
-                <tr>
-                  <td>Envío</td>
-                  <td>{{ priceSummary.delivery }}</td>
-                </tr>
-                <tr>
-                  <td>Descuento</td>
-                  <td>{{ priceSummary.discount }}</td>
-                </tr>
-                <tr>
-                  <td><h4>Total:</h4></td>
-                  <td><h4>{{ priceSummary.total }}</h4></td>
-                </tr>
-              </tbody>
-            </table>      
+        <tbody>
+          <tr>
+            <td>Precio</td>
+            <td>{{ priceSummary.price }}</td>
+          </tr>
+          <tr>
+            <td>Iva(%12)</td>
+            <td>{{ priceSummary.iva }}</td>
+          </tr>
+          <tr>
+            <td>Envío</td>
+            <td>{{ priceSummary.delivery }}</td>
+          </tr>
+          <tr>
+            <td><h4>Total:</h4></td>
+            <td><h4>{{ priceSummary.total }}</h4></td>
+          </tr>
+        </tbody>
+      </table>
+      <!-- Botón para proceder al proceso de compra -->
       <button (click)="checkout()" class="btn btn-success">Verificar</button>
-
-      </div>
-      
     </div>
   </div>
-
-
-
-
+</div>

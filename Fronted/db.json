@@ -78,6 +78,12 @@
       "email": "juan@gmail.com",
       "password": "12345",
       "id": 3
+    },
+    {
+      "name": "wiliam",
+      "email": "alanescobar.p@gmail.com",
+      "password": "12345",
+      "id": 4
     }
   ],
   "cart": [
@@ -152,6 +158,18 @@
       "userId": 3,
       "productId": 4,
       "id": 10
+    },
+    {
+      "name": "SERRUCHO",
+      "price": "15.00",
+      "color": "Orange",
+      "category": "Herramientas",
+      "description": "Serrucho económico de 22″",
+      "image": "https://promart.vteximg.com.br/arquivos/ids/403607-1000-1000/18537.jpg?v=637177386021470000",
+      "quantity": 1,
+      "userId": 4,
+      "productId": 3,
+      "id": 11
     }
   ],
   "orders": [
@@ -178,6 +196,14 @@
       "totalPrice": 35.512,
       "userId": 3,
       "id": 3
+    },
+    {
+      "email": "wiliampuntomorales45@gmail.com",
+      "address": "monjas",
+      "contact": "099589855",
+      "totalPrice": 23.8,
+      "userId": 4,
+      "id": 4
     }
   ]
 }
