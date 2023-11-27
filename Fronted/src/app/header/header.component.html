@@ -5,7 +5,7 @@
   </a>
   <div *ngIf="menuType!=='vendedor'" class="nav-search">
     <input type="text" #searchInput (keyup)="searchProduct($event)" (blur)="hideSearch()" placeholder="Búsqueda de Productos" >
-    <button (click)="submitSearch(searchInput.value)" class="btn btn-warning" style="margin-left: 4px;">Buscar</button>
+    <button (click)="submitSearch(searchInput.value)" class="btn btn-warning" style="margin-left: 4px;"> Buscar</button>
     <ul class="suggested-result" *ngIf="searchResult">
       <li *ngFor="let item of searchResult">
         <a (mousedown)="redirectToDetails(item.id)">{{item.name}}</a>
@@ -17,26 +17,26 @@
 <nav class="nav">
   <div [ngSwitch]="menuType" style="padding: 1px;">
     <ul *ngSwitchCase="'default'">
-      <li><a routerLink="">Inicio</a></li>
-      <li><a routerLink="vendedor-auth"><span class="glyphicon glyphicon-user"></span> Vendedor</a></li>
-      <li><a (click)="logOut()">Logout</a></li>
-      <li><a routerLink="/user-auth"><span class="glyphicon glyphicon-log-in"></span> Cliente</a></li>
+      <li><a routerLink=""><i class="fa-solid fa-house-user"></i> Inicio</a></li>
+      <li><a routerLink="vendedor-auth"><span class="glyphicon glyphicon-user"></span> <i class="fa-solid fa-user"></i> Vendedor</a></li>
+      <li><a (click)="logOut()"> <i class="fa-solid fa-right-to-bracket"></i> Logout</a></li>
+      <li><a routerLink="/user-auth"><span class="glyphicon glyphicon-log-in"></span><i class="fa-regular fa-user"></i>  Cliente</a></li>
 
       <!--<li><a href="#">Carrito ({{cartItems}})</a></li>
       <li><a routerLink="/"><img src="https://yavirac.edu.ec/img/Logo%20Yavirac.png" alt="Yavirac Logo" style="margin: -20px 0px -20px 625px; width:130px; height:60px"></a></li>
        -->
     </ul>
     <ul *ngSwitchCase="'user'">
-      <li><a routerLink="">Inicio</a></li>
-      <li><a routerLink="user-auth">{{userName}}</a></li>
-      <li><a [routerLink]="cartItems > 0 ? 'cart-page' : null">Carrito ({{cartItems}})</a></li>
-      <li><a routerLink="mis-ordenes">Mis Órdenes</a></li>
-      <li><a (click)="userlogOut()">Cerrar Sesión</a></li>
+      <li><a routerLink=""><i class="fa-solid fa-house-user"></i> Inicio</a></li>
+      <li><a routerLink="user-auth"> <i class="fa-regular fa-user"></i> {{userName}}</a></li>
+      <li><a [routerLink]="cartItems > 0 ? 'cart-page' : null"><i class="fa-solid fa-cart-arrow-down"></i> Carrito ({{cartItems}})</a></li>
+      <li><a routerLink="mis-ordenes"><i class="fa-solid fa-truck"></i> Mis Ordenes</a></li>
+      <li><a (click)="userlogOut()"><i class="fa-solid fa-right-to-bracket"></i> Cerrar Sesión</a></li>
     </ul>
     <ul *ngSwitchCase="'vendedor'">
       <li><a routerLink="vendedor-add-product">Añadir Productos</a></li>
       <li><a routerLink="vendedor-home">Lista de Productos</a></li>
-      <li><a (click)="logOut()">Logout</a></li>
+      <li><a (click)="logOut()"><i class="fa-solid fa-right-to-bracket"></i> Logout</a></li>
       <li><a routerLink="vendedor-auth">{{vendedorName}}</a></li>
     </ul>
     

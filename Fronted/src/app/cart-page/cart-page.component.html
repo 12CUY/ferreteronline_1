@@ -1,6 +1,6 @@
 <!-- Sección del carrito de compras -->
 <div class="carrito-1">
-  <h1>Mi Carrito</h1>
+  <h1>Mi Carrito <i class="fa-solid fa-cart-shopping"></i></h1>
   <div class="table-responsive">
     <!-- Tabla que muestra los detalles de los productos en el carrito -->
     <table class="table table-hover">
@@ -27,7 +27,7 @@
               (click)="removeToCart(cart.id)"
               routerLink="/"
             >
-              Eliminar
+            <i class="fa-solid fa-trash"></i> Eliminar
             </button>
           </td>
         </tr>
@@ -63,7 +63,7 @@
         </tbody>
       </table>
       <!-- Botón para proceder al proceso de compra -->
-      <button (click)="checkout()" class="btn btn-success">Verificar</button>
+      <button (click)="checkout()" class="btn btn-success"><i class="fa-solid fa-magnifying-glass"></i> Verificar</button>
     </div>
   </div>
 </div>
