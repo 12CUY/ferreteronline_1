@@ -16,9 +16,15 @@ export class VendedorHomeComponent implements OnInit{
   editIcon=faEdit;
   constructor(private product:ProductService){}
 
+
+//llama a la lista de productos (ngOnInit)
+
   ngOnInit(): void {
     this.list();
   }
+
+//eliminar un producto y actualiza la lista 
+
   deleteProduct(id:number){
     console.warn("test id",id);
 
@@ -28,10 +34,16 @@ export class VendedorHomeComponent implements OnInit{
       this.list();
      }
     });
-    setTimeout(() =>{
-      this.productMessage=undefined;
+
+// en caso de error tira un alerta
+
+  setTimeout(() =>{
+    this.productMessage=undefined;
     },3000);
   }
+
+//obtener la lista de productos
+
   list(){
     this.product.productList().subscribe((result)=>{
       console.warn(result);

@@ -8,10 +8,15 @@ import { SignUp } from '../data-type';
   templateUrl: './vendedor-auth.component.html',
   styleUrls: ['./vendedor-auth.component.css']
 })
+
+//controlar si se debe mostrar el formulario de inicio de sesión (showLogin )
+//(authError) mensaje de error
+
 export class VendedorAuthComponent implements OnInit {
   constructor(private vendedor:VendedorService,private router:Router){}
   showLogin=false;
   authError: string="";
+
 
   ngOnInit(): void{
     this.vendedor.reloadVendedor();
@@ -20,6 +25,9 @@ export class VendedorAuthComponent implements OnInit {
   signUp(data:SignUp):void{
    this.vendedor.userSignUp(data);
   }
+
+
+//(authError) error al inico de session 
 
   login(data:SignUp):void{
    this.authError="";
@@ -30,6 +38,9 @@ export class VendedorAuthComponent implements OnInit {
      }
    });
    }
+
+   
+  //controla el fomulario de sesion o ingreso  
 
   openLogin(){
     this.showLogin=true;
