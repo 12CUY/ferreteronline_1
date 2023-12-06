@@ -18,7 +18,7 @@
       "name": "CLAVOS PARA MADERA",
       "price": "5.92",
       "color": "Gray",
-      "category": "Carpinteria",
+      "category": "Carpinterias",
       "description": "Clavos para madera varias medidas, fundas de 1 Kilo",
       "image": "https://www.lacasadelcarpintero.com.ec/wp-content/uploads/2021/07/CLAG-CC-416x416.jpg",
       "id": 2
@@ -84,6 +84,48 @@
       "email": "alanescobar.p@gmail.com",
       "password": "12345",
       "id": 4
+    },
+    {
+      "name": "",
+      "email": "",
+      "password": "",
+      "id": 5
+    },
+    {
+      "name": "",
+      "email": "",
+      "password": "",
+      "id": 6
+    },
+    {
+      "name": "",
+      "email": "",
+      "password": "",
+      "id": 7
+    },
+    {
+      "name": "wiliam",
+      "email": "alanescobar.p@gmail.com",
+      "password": "12345",
+      "id": 8
+    },
+    {
+      "name": "martin",
+      "email": "alasnescobar.p@gmail.com",
+      "password": "12345",
+      "id": 9
+    },
+    {
+      "name": "wiliam",
+      "email": "correo@example.com",
+      "password": "1234568",
+      "id": 10
+    },
+    {
+      "name": "wiliam",
+      "email": "alasnescobar.p@gmail.com",
+      "password": "12345",
+      "id": 11
     }
   ],
   "cart": [
@@ -160,18 +202,6 @@
       "id": 10
     },
     {
-      "name": "Martillo",
-      "price": "10",
-      "color": "Black",
-      "category": "Herramientas",
-      "description": "Martillo Pequeño",
-      "image": "https://www.servillavespaez.com/wp-content/uploads/2017/08/MA-02-A-458x458.jpg",
-      "quantity": 1,
-      "userId": 4,
-      "productId": 4,
-      "id": 11
-    },
-    {
       "name": "SERRUCHO",
       "price": "15.00",
       "color": "Orange",
@@ -213,9 +243,33 @@
       "email": "wiliampuntomorales45@gmail.com",
       "address": "monjas",
       "contact": "099589855",
-      "totalPrice": 23.8,
+      "totalPrice": 7,
       "userId": 4,
-      "id": 4
+      "id": 6
+    },
+    {
+      "email": "",
+      "address": "",
+      "contact": "",
+      "totalPrice": 35,
+      "userId": 4,
+      "id": 9
+    },
+    {
+      "email": "",
+      "address": "",
+      "contact": "",
+      "totalPrice": 35,
+      "userId": 4,
+      "id": 10
+    },
+    {
+      "email": "wma.morales@yavirac.edu.ec",
+      "address": "monjas",
+      "contact": "099589855",
+      "totalPrice": 51.8,
+      "userId": 4,
+      "id": 11
     }
   ]
 }

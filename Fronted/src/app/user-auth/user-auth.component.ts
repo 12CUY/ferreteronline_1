@@ -2,6 +2,7 @@ import { Component,OnInit } from '@angular/core';
 import {login, SignUp,cart,product } from '../data-type';
 import { ProductService } from '../services/product.service';
 import { UserService } from '../services/user.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-user-auth',
@@ -18,6 +19,7 @@ export class UserAuthComponent implements OnInit {
 // usar sweetalert
  signUp(data:SignUp){
    this.user.userSignUp(data);
+   Swal.fire('Registro exitoso', '¡Gracias por registrarte!', 'success');
  }
  login(data:login){
   this.user.userLogin(data);
@@ -52,8 +54,8 @@ export class UserAuthComponent implements OnInit {
      setTimeout(()=>{
      this.product.addToCart(cartData).subscribe((result)=>{
       if(result){
-       console.warn("El item comprado esta en la Base de Datos");
-      }
+        Swal.fire('Compra exitosa', 'El ítem comprado está en la Base de Datos', 'success');  
+          }
      });
      if(cartDataList.length===index+1){
       localStorage.removeItem('localCart');
