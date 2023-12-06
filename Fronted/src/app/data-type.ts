@@ -10,6 +10,7 @@ export interface login{
 }
 
 export interface product{
+  valid: any
   name:string,
   price:number,
   color:string,
