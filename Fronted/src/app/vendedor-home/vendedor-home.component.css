@@ -39,7 +39,7 @@ fa-icon {
   color: red;
   margin: 2px;
   padding: 5px;
-
+  cursor: pointer;
 }
 
 .eliminar:hover{
@@ -52,6 +52,7 @@ fa-icon {
   color: rgb(102, 255, 0);
   margin: 2px;
   padding: 5px;
+  cursor: pointer;
 }
 
 .editar:hover{

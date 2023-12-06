@@ -1,7 +1,8 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { product } from '../data-type';
 import { ProductService } from '../services/product.service';
-import {faTrash,faEdit} from '@fortawesome/free-solid-svg-icons';
+import Swal from 'sweetalert2';
+import { faTrash, faEdit } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-vendedor-home',
@@ -9,45 +10,55 @@ import {faTrash,faEdit} from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./vendedor-home.component.css']
 })
 
-export class VendedorHomeComponent implements OnInit{
-  productList:undefined | product[];
-  productMessage:undefined | string;
-  icon=faTrash;
-  editIcon=faEdit;
-  constructor(private product:ProductService){}
+export class VendedorHomeComponent implements OnInit {
+  productList: product[] = [];
+  productMessage: string | undefined;
+  icon = faTrash;
+  editIcon = faEdit;
 
-
-//llama a la lista de productos (ngOnInit)
+  constructor(private product: ProductService) {}
 
   ngOnInit(): void {
     this.list();
   }
 
-//eliminar un producto y actualiza la lista 
-
-  deleteProduct(id:number){
-    console.warn("test id",id);
-
-    this.product.deleteProduct(id).subscribe((result)=>{
-     if(result){
-      this.productMessage="El producto a sido borrado";
-      this.list();
-     }
+  deleteProduct(id: number, productName: string) {
+    Swal.fire({
+      title: `¿Estás seguro de eliminar ${productName}?`,
+      text: 'Esta acción no se puede deshacer',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Sí, eliminar',
+      cancelButtonText: 'Cancelar'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.performDelete(id);
+      }
     });
-
-// en caso de error tira un alerta
-
-  setTimeout(() =>{
-    this.productMessage=undefined;
-    },3000);
   }
 
-//obtener la lista de productos
+  private performDelete(id: number) {
+    // Puedes obtener el nombre del producto aquí si es necesario
+    // const productName = this.productList.find(item => item.id === id)?.name;
 
-  list(){
-    this.product.productList().subscribe((result)=>{
+    this.product.deleteProduct(id).subscribe((result) => {
+      if (result) {
+        this.productMessage = 'El producto ha sido borrado';
+        this.list();
+      }
+    });
+
+    setTimeout(() => {
+      this.productMessage = undefined;
+    }, 3000);
+  }
+
+  list() {
+    this.product.productList().subscribe((result) => {
       console.warn(result);
-      this.productList=result;
+      this.productList = result;
     });
   }
 }
