@@ -10,7 +10,7 @@
         <p class="invalid-input"><span *ngIf="password.invalid && password.touched">Porfavor Ingresa un Clave</span></p>
         <button class="form-button"(click)="openLogin()" class="btn btn-primary">Registrarse</button>
         <a class="auth-toggle-link" (click)="openLogin()">
-          Tienes ya una cuenta? <span class="click-aqui"> Iniciar sesion</span>
+          Tienes ya una cuenta? <span class="click-aqui"> Iniciar sesion.</span>
         </a>
               </form>
     </div>
@@ -24,7 +24,7 @@
         <input class="form-input" name="password" ngModel  type="password" placeholder="Ingresa tu Contraseña"  minlenght="5" maxlength="8" ngModel #password="ngModel" required>
         <p class="invalid-input"><span *ngIf="password.invalid && password.touched">Porfavor Ingresa un Clave</span></p>
         <button [disabled]="vendedorLogin.invalid" class="form-button btn btn-primary">Login</button>
-        <a class="auth-toggle-link" (click)="openSignUp()">No tienes una cuenta? <span class="click-aqui"> Registrate</span> </a>
+        <a class="auth-toggle-link" (click)="openSignUp()">No tienes una cuenta? <span class="click-aqui"> Registrate.</span> </a>
       </form>
     </div>
   </div>
