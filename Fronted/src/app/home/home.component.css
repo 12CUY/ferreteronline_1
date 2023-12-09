@@ -9,13 +9,13 @@
 .carrusel-header-img{
   object-fit: contain;
   height: 300px;
-  
   width: 100%;
 }
 
 /*Productos Populares*/
 .container2{
   margin: 20px;
+
 }
 .separador{
   background-color: yellow;
@@ -40,6 +40,8 @@
   margin-right: 25px;
   border: 1px solid gray;
   border-radius: 30% 30% 10% 10%;
+  box-shadow: 1px 5px 5px 5px rgba(0, 0, 0, 0.205);
+
 }
 
 /*imagen de dashboard*/
@@ -59,11 +61,11 @@
 }
 .producto-item .nombre{
   text-align: center;
-  font-size: 20px;
+  font-size: 15px;
   font-weight: 600;
   background-color: yellow;
   padding: 7px 25px;
-
+  text-transform: uppercase;
 }
 .producto-item .precio{
   text-align: center;
