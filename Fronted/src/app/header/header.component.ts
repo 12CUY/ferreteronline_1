@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router'
 import { product } from '../data-type';
 import { ProductService } from '../services/product.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-header',
@@ -42,16 +43,43 @@ ngOnInit(): void {
     this.cartItems=items.length;
   });
 }
-  logOut(){
-    localStorage.removeItem('vendedor');
-    this.route.navigate(['/']);
-    
-  }
-  userlogOut(){
-    localStorage.removeItem('user');
-    this.route.navigate(['/user-auth']);
-    this.product.cartData.emit([]);
-  }
+logOut() {
+  Swal.fire({
+    title: 'Cerrar sesión',
+    text: '¿Estás seguro de que quieres cerrar sesión?',
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonText: 'Sí, cerrar sesión',
+    cancelButtonText: 'No, cancelar'
+  }).then((result) => {
+    if (result.isConfirmed) {
+      // Eliminar del localStorage
+      localStorage.removeItem('vendedor');
+      // Redirigir a la página de inicio
+      this.route.navigate(['/']);
+    }
+  });
+}
+
+userlogOut() {
+  Swal.fire({
+    title: 'Cerrar sesión',
+    text: '¿Estás seguro de que quieres cerrar sesión?',
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonText: 'Sí, cerrar sesión',
+    cancelButtonText: 'No, cancelar'
+  }).then((result) => {
+    if (result.isConfirmed) {
+      // Eliminar del localStorage
+      localStorage.removeItem('user');
+      // Redirigir a la página de user-auth
+      this.route.navigate(['/user-auth']);
+      // Emitir evento para limpiar datos del carrito
+      this.product.cartData.emit([]);
+    }
+  });
+}
   searchProduct(query:KeyboardEvent){
    if(query){
     const element=query.target as HTMLInputElement;
