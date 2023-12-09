@@ -5,7 +5,7 @@ import Swal from 'sweetalert2';
 import { faTrash, faEdit } from '@fortawesome/free-solid-svg-icons';
 import * as $ from 'jquery';
 import 'datatables.net';
-import 'path-to-your-assets-folder/Spanish.json';  // Ajusta la ruta según la ubicación de tu archivo
+
 @Component({
   selector: 'app-vendedor-home',
   templateUrl: './vendedor-home.component.html',
