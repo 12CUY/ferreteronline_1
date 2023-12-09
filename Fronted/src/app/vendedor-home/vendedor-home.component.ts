@@ -1,16 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { product } from '../data-type';
 import { ProductService } from '../services/product.service';
 import Swal from 'sweetalert2';
 import { faTrash, faEdit } from '@fortawesome/free-solid-svg-icons';
-
+import * as $ from 'jquery';
+import 'datatables.net';
+import 'path-to-your-assets-folder/Spanish.json';  // Ajusta la ruta según la ubicación de tu archivo
 @Component({
   selector: 'app-vendedor-home',
   templateUrl: './vendedor-home.component.html',
   styleUrls: ['./vendedor-home.component.css']
 })
-
-export class VendedorHomeComponent implements OnInit {
+export class VendedorHomeComponent implements OnInit, AfterViewInit {
   productList: product[] = [];
   productMessage: string | undefined;
   icon = faTrash;
@@ -20,6 +21,12 @@ export class VendedorHomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.list();
+  }
+
+  ngAfterViewInit(): void {
+    $(document).ready(() => {
+      $('#dataTable').DataTable();
+    });
   }
 
   deleteProduct(id: number, productName: string) {
@@ -40,12 +47,11 @@ export class VendedorHomeComponent implements OnInit {
   }
 
   private performDelete(id: number) {
-    // Puedes obtener el nombre del producto aquí si es necesario
-    // const productName = this.productList.find(item => item.id === id)?.name;
-
     this.product.deleteProduct(id).subscribe((result) => {
       if (result) {
         this.productMessage = 'El producto ha sido borrado';
+        // Reinitialize DataTables after the list is updated
+        $('#dataTable').DataTable().destroy();
         this.list();
       }
     });
@@ -59,6 +65,11 @@ export class VendedorHomeComponent implements OnInit {
     this.product.productList().subscribe((result) => {
       console.warn(result);
       this.productList = result;
+      // Reinitialize DataTables after the list is updated
+      $('#dataTable').DataTable().destroy();
+      $(document).ready(() => {
+        $('#dataTable').DataTable();
+      });
     });
   }
 }

@@ -1,39 +1,40 @@
 <div class="product-list">
-  <br>
   <h1>Lista de Productos</h1>
   <p class="p-message">{{productMessage}}</p>
   <button class="btn btn-success" routerLink="/vendedor-add-product">Agregar un Producto</button>
   <br>
-  <br>
-  <div class="table-responsive">
-    <table class="table table-hover ">
-    <thead>
-      <tr>
-        <th>Imagen</th>
-        <th>Nombre</th>
-        <th>Precio</th>
-        <th>Color</th>
-        <th>Categoria</th>
-        <th>Descripcion</th>
-        <th>Acción</th>
-      </tr>
-    </thead>
-  <tbody>
-    <tr *ngFor="let item of productList">
-      <td><img src="{{item.image}}" alt="{{item.name}}"/></td>
-      <td>{{item.name}}</td>
-      <td>{{item.price}}</td>
-      <td>{{item.color}}</td>
-      <td>{{item.category}}</td>
-      <td>{{item.description}}</td>
-      <td>
-        <fa-icon (click)="deleteProduct(item.id, item.name)" [icon]="icon" routerLink="/" class="eliminar"></fa-icon>
-        <a class="adjust-update-link" routerLink="/vendedor-update-product/{{item.id}}">
-          <fa-icon [icon]="editIcon" class="editar"></fa-icon>
-        </a>
-    </tr>
-  </tbody>
-  </table>
-  </div>
 
+  <div class="table-responsive">
+    <br>
+    <table id="dataTable" class="table table-hover">
+      <thead>
+        <br>
+        <tr>
+          <th>Imagen</th>
+          <th>Nombre</th>
+          <th>Precio</th>
+          <th>Color</th>
+          <th>Categoria</th>
+          <th>Descripcion</th>
+          <th>Acción</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of productList">
+          <td><img src="{{item.image}}" alt="{{item.name}}"/></td>
+          <td>{{item.name}}</td>
+          <td>{{item.price}}</td>
+          <td>{{item.color}}</td>
+          <td>{{item.category}}</td>
+          <td>{{item.description}}</td>
+          <td>
+            <fa-icon (click)="deleteProduct(item.id, item.name)" [icon]="icon" routerLink="/" class="eliminar"></fa-icon>
+            <a class="adjust-update-link" routerLink="/vendedor-update-product/{{item.id}}">
+              <fa-icon [icon]="editIcon" class="editar"></fa-icon>
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>

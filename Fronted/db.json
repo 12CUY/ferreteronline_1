@@ -180,6 +180,12 @@
       "email": "alasnescobar.p@gmail.com",
       "password": "12345",
       "id": 11
+    },
+    {
+      "name": "Renato Escobar",
+      "email": "wiliampuntomorales@hotmail.com",
+      "password": "asd123",
+      "id": 12
     }
   ],
   "cart": [
