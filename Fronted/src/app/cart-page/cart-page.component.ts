@@ -3,6 +3,7 @@ import { cart, priceSummary } from '../data-type';
 import { ProductService } from '../services/product.service';
 import { Router } from '@angular/router';
 
+
 // Mi carrito
 @Component({
   selector: 'app-cart-page',
@@ -66,4 +67,9 @@ export class CartPageComponent implements OnInit {
     // navega a la pagina de pago al finalizar la compra 
     this.router.navigate(['/checkout']);
   }
+
+
+
+
+  
 }

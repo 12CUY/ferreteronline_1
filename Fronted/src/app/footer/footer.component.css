@@ -67,3 +67,11 @@
     background-color: rgba(0, 0, 0, 0.2);
     color: white;
   }
+
+  .contact-heading{
+    text-align: center;
+  }
+
+  .contact-list{
+    text-align: left;
+  }
