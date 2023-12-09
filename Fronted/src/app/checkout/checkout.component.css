@@ -1,5 +1,7 @@
-/*contenedor */
+  /*contenedor */
 .shipping-address{
+  display: flex;
+  flex-direction: column;
   margin: 5px;
   padding: 15px;
   margin-left: 25px;
@@ -9,6 +11,11 @@
   border-radius: 10px;
 }
 
+
+.form-input,
+.btn {
+  width: 100%;
+}
 
 /*total a pagar*/
 .total-pagar{
@@ -34,4 +41,35 @@
   text-align: center;
   margin-top: 15px;
   margin-bottom: 15px;
+}
+
+
+
+/* Estilos generales para dispositivos más pequeños */
+@media only screen and (max-width: 768px) {
+  .shipping-address {
+    width: 100%; 
+    padding: 15px; 
+    box-sizing: border-box;
+  }
+
+  .form-input {
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+  }
+
+  .row {
+    flex-direction: column; 
+  }
+
+  .col-sm-6,
+  .col-sm-5 {
+    width: 100%; 
+    margin-bottom: 15px; 
+  }
+
+  .btn {
+    width: 100%; 
+  }
 }

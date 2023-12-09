@@ -43,6 +43,7 @@
   margin: 0;
   padding: 0;
   list-style-type: none;
+  justify-content: flex-end;
 }
 
 .nav ul a {
@@ -56,9 +57,15 @@
 .nav ul a:hover{
   background-color: #ddd;
   cursor: pointer;
+  
 }
 .nav ul li {
   padding: 0 20px;
+}
+
+.nav ul li a{
+  text-decoration: none;
+  color: black;
 }
 
 .suggested-result {
@@ -81,6 +88,9 @@
   color: black;
 }
 
+
+
+
 /* Media queries para hacer responsive */
 @media screen and (max-width: 768px) {
   .nav-arriba {
@@ -99,6 +109,10 @@
 
   .nav ul {
     flex-direction: column;
-    align-items: center;
+    align-items:flex-start;
+  }
+
+  .nav li{
+    padding: 10px;
   }
 }
