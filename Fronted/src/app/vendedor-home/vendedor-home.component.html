@@ -2,13 +2,12 @@
   <h1>Lista de Productos</h1>
   <p class="p-message">{{productMessage}}</p>
   <button class="btn btn-success" routerLink="/vendedor-add-product">Agregar un Producto</button>
-  <br>
+  <hr>
 
   <div class="table-responsive">
-    <br>
     <table id="dataTable" class="table table-hover">
+      <span></span>
       <thead>
-        <br>
         <tr>
           <th>Imagen</th>
           <th>Nombre</th>
@@ -22,11 +21,11 @@
       <tbody>
         <tr *ngFor="let item of productList">
           <td><img src="{{item.image}}" alt="{{item.name}}"/></td>
-          <td>{{item.name}}</td>
-          <td>{{item.price}}</td>
-          <td>{{item.color}}</td>
-          <td>{{item.category}}</td>
-          <td>{{item.description}}</td>
+          <td id="name">{{item.name}}</td>
+          <td id="name">{{item.price}}</td>
+          <td id="name">{{item.color}}</td>
+          <td id="name">{{item.category}}</td>
+          <td id="name">{{item.description}}</td>
           <td>
             <fa-icon (click)="deleteProduct(item.id, item.name)" [icon]="icon" routerLink="/" class="eliminar"></fa-icon>
             <a class="adjust-update-link" routerLink="/vendedor-update-product/{{item.id}}">

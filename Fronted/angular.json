@@ -42,6 +42,7 @@
           },
           "configurations": {
             "production": {
+              "allowedCommonJsDependencies": ["jquery"],
               "budgets": [
                 {
                   "type": "initial",
@@ -57,6 +58,7 @@
               "outputHashing": "all"
             },
             "development": {
+              "allowedCommonJsDependencies": ["jquery", "sweetalert2"],
               "buildOptimizer": false,
               "optimization": false,
               "vendorChunk": true,

@@ -272,6 +272,18 @@
       "productId": 3,
       "userId": null,
       "id": 12
+    },
+    {
+      "name": "Taladro Petrul",
+      "price": "30",
+      "color": "Yellow",
+      "category": "Herramientas",
+      "description": "Taladro Petrul ",
+      "image": "https://cdn.shopify.com/s/files/1/0305/0550/0731/products/TaladroPretulMediaFoto1_1024x1024@2x.jpg?v=1625272412",
+      "quantity": 1,
+      "userId": 4,
+      "productId": 5,
+      "id": 13
     }
   ],
   "orders": [
