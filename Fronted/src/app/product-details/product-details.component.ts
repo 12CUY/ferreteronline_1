@@ -2,6 +2,7 @@ import { Component,OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { cart, product } from '../data-type';
 import { ProductService } from '../services/product.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-product-details',
@@ -13,6 +14,7 @@ export class ProductDetailsComponent implements OnInit {
  productQuantity:number=1;
  removeCart=false;
  cartData:product | undefined;
+  route: any;
  constructor(private activeRoute:ActivatedRoute,private product:ProductService){}
 
  ngOnInit(): void {
@@ -52,7 +54,16 @@ export class ProductDetailsComponent implements OnInit {
     this.productQuantity-=1;
   }
  }
+
+
  addToCart(){
+Swal.fire({
+  title: 'Se Añadio Correctamente',
+    text: '',
+    icon: 'success',
+
+});
+
   if(this.productData){
     this.productData.quantity=this.productQuantity;
     if(!localStorage.getItem('user')){
@@ -76,7 +87,28 @@ export class ProductDetailsComponent implements OnInit {
     }
   }
  }
+
+
+
+
  removeToCart(productId:number){
+  Swal.fire({
+    title: 'Desea Eliminar',
+      text: '',
+      icon: 'info',
+      showCancelButton: true,
+      confirmButtonText: 'Sí, Seguro',
+      cancelButtonText: 'No, Estoy Seguro'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        // Eliminar 
+        localStorage.getItem('user');
+        // Redirigir a la página 
+        this.route.navigate(['/']);
+      }
+  
+  });
+
   if(!localStorage.getItem('user')){
     this.product.removeItemFromCart(productId);
   }else{
@@ -92,4 +124,6 @@ export class ProductDetailsComponent implements OnInit {
    this.removeCart=false;
   }
  }
+
+
 }

@@ -199,18 +199,6 @@
       "id": 7
     },
     {
-      "name": "CLAVOS PARA MADERA",
-      "price": "5.92",
-      "color": "Gray",
-      "category": "Carpinteria",
-      "description": "Clavos para madera varias medidas, fundas de 1 Kilo",
-      "image": "https://www.lacasadelcarpintero.com.ec/wp-content/uploads/2021/07/CLAG-CC-416x416.jpg",
-      "quantity": 1,
-      "userId": 3,
-      "productId": 2,
-      "id": 9
-    },
-    {
       "name": "Martillo",
       "price": "10",
       "color": "Black",
@@ -269,6 +257,18 @@
       "userId": 4,
       "productId": 5,
       "id": 16
+    },
+    {
+      "name": "CLAVOS PARA MADERA",
+      "price": "5.00",
+      "color": "Gray",
+      "category": "Carpinteriass",
+      "description": "Clavos para madera varias medidas, fundas de 1 Kilo",
+      "image": "https://www.lacasadelcarpintero.com.ec/wp-content/uploads/2021/07/CLAG-CC-416x416.jpg",
+      "quantity": 1,
+      "userId": 3,
+      "productId": 2,
+      "id": 17
     }
   ],
   "orders": [
