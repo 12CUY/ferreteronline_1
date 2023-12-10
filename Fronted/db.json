@@ -51,33 +51,6 @@
       "id": 5
     },
     {
-      "name": "Taladro Bosh",
-      "price": "30",
-      "color": "Blue",
-      "category": "Herramientas",
-      "description": "Taladro Bosh",
-      "image": "https://kywitiendaenlinea.com/wp-content/uploads/2020/05/694182.jpg",
-      "id": 6
-    },
-    {
-      "name": "wedw",
-      "price": "",
-      "color": "",
-      "category": "",
-      "description": "",
-      "image": "",
-      "id": 7
-    },
-    {
-      "name": "erfe",
-      "price": "",
-      "color": "",
-      "category": "",
-      "description": "",
-      "image": "",
-      "id": 8
-    },
-    {
       "name": "esteban",
       "price": "123214.23",
       "color": "rojo",
@@ -94,24 +67,6 @@
       "description": "construccio",
       "image": "https://bpecuador.com/wp-content/uploads/2023/02/BP00996.png",
       "id": 10
-    },
-    {
-      "id": 11
-    },
-    {
-      "id": 12
-    },
-    {
-      "id": 13
-    },
-    {
-      "id": 14
-    },
-    {
-      "id": 15
-    },
-    {
-      "id": 16
     }
   ],
   "users": [

@@ -57,3 +57,11 @@ body{
 button:disabled{
   cursor:not-allowed;
 }
+
+@media screen and (max-width: 600px) {
+  /* Estilos para pantallas pequeñas */
+}
+
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+  /* Estilos para tamaños de pantalla medianos */
+}

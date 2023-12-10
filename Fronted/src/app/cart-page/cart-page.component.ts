@@ -2,6 +2,7 @@ import { Component,OnInit } from '@angular/core';
 import { cart, priceSummary } from '../data-type';
 import { ProductService } from '../services/product.service';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 
 // Mi carrito
@@ -32,15 +33,36 @@ export class CartPageComponent implements OnInit {
     this.loadDetails();
   }
   // Método para eliminar un producto del carrito
-  removeToCart(cartId: number | undefined): void {
-    cartId &&
-      this.cartData &&
-      this.product.removeToCart(cartId).subscribe(() => {
-        // Recargar los detalles después de la eliminación
-        this.loadDetails();
+  removeToCart(cartId: number | undefined, productName: string | undefined): void {
+    if (cartId && productName) {
+      Swal.fire({
+        title: `¿Estás seguro de eliminar ${productName}?`,
+        text: 'No podrás revertir esto',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Sí, eliminar',
+        cancelButtonText: 'Cancelar'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          // Si el usuario hace clic en "Sí, eliminar"
+          this.product.removeToCart(cartId).subscribe(() => {
+            // Puedes agregar cualquier lógica adicional aquí
+            // (por ejemplo, actualizar el total del carrito, etc.)
+            Swal.fire(
+              'Eliminado',
+              `El producto ${productName} ha sido eliminado del carrito.`,
+              'success'
+            ).then(() => {
+              // Recargar los detalles después de la eliminación
+              this.loadDetails();
+            });
+          });
+        }
       });
+    }
   }
-
   // Método para cargar los detalles del carrito y calcular el resumen de precios
   loadDetails(): void {
     this.product.currentCart().subscribe((result) => {
@@ -68,8 +90,4 @@ export class CartPageComponent implements OnInit {
     this.router.navigate(['/checkout']);
   }
 
-
-
-
-  
 }

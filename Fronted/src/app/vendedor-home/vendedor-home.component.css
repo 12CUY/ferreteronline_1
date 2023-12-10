@@ -10,6 +10,10 @@
 h1{
   text-align: center;
   margin: 20px;
+  background-color: aliceblue;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 40px;
 }
 
 
@@ -30,6 +34,8 @@ table{
   background-color: white;
   border-radius: 10px;
   padding: 2px;
+  box-shadow: 0px 10px 10px 1px  rgba(0, 0, 0, 0.267);
+
 }
 
 
@@ -45,21 +51,20 @@ fa-icon {
   padding: 5px;
 }
 
-#dataTable{
-  background-color: aliceblue;
-}
 
 .eliminar{
   color: red;
   margin: 2px;
   padding: 5px;
   cursor: pointer;
+  margin: 0 10px;
 }
 
 .eliminar:hover{
   color: white;
   background-color: red;
   border-radius: 5px;
+  margin: 0 10px;
 }
 
 .editar{
@@ -67,10 +72,17 @@ fa-icon {
   margin: 2px;
   padding: 5px;
   cursor: pointer;
+  margin: 0 10px;
 }
 
 .editar:hover{
   color: white;
   background-color: rgb(0, 255, 0);
   border-radius: 5px;
+  margin: 0 10px;
+}
+
+.centered-icons {
+  display: flex;
+  justify-content: center;
 }
