@@ -77,7 +77,7 @@ export class CartPageComponent implements OnInit {
       // metodos de calculo del total de productos
       this.priceSummary.price = +price.toFixed(2);
       this.priceSummary.iva = +(price * 0.12).toFixed(2);
-      this.priceSummary.delivery = 7;
+      this.priceSummary.delivery = 3;
       this.priceSummary.total = +(price + this.priceSummary.iva + this.priceSummary.delivery).toFixed(2);
 
       if (!this.cartData.length) {

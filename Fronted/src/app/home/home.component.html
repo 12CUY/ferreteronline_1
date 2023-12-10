@@ -17,26 +17,26 @@
 </div>
 
 <div class="container2">
- <div class="row">
-    <div class="col-sm-3" *ngFor="let item of trendyProducts">
-     <div class="producto-item">
-       <img src="{{item.image}}" alt="">
-     <div class="producto-detalles">
-       <h6 class="nombre">{{item.name}}</h6>
-       <div class="producto-price">
-       <h6 class="precio">${{item.price}}</h6>
-       </div>
-       <div class="producto-color">
-        <h6>Color:{{item.color}}</h6>
+    <div class="row">
+        <div class="col-sm-3" *ngFor="let item of trendyProducts">
+          <div class="producto-item">
+            <img src="{{item.image}}" alt="">
+          <div class="producto-detalles">
+            <h6 class="nombre">{{item.name}}</h6>
+            <div class="producto-price">
+              <h6 class="precio">${{item.price}}</h6>
+            </div>
+            <div class="producto-color">
+              <h6>Color:{{item.color}}</h6>
+            </div>
         </div>
-     </div>
-     <div class="producto-footer">
-       <a routerLink="/details/{{item.id}}"><button class="button-detalle button1 max-width">Detalles</button></a>
-       <a routerLink="/details/{{item.id}}"><button class="button-add button1 max-width"> Añadir <i class="fa-solid fa-cart-shopping"></i></button></a>
-     </div>
+        <div class="producto-footer">
+          <a routerLink="/details/{{item.id}}"><button class="button-detalle button1 max-width">Detalles <i class="fa-solid fa-circle-info"></i></button></a>
+          <a routerLink="/details/{{item.id}}"><button class="button-add button1 max-width"> Añadir <i class="fa-solid fa-cart-shopping"></i></button></a>
+        </div>
+        </div>
+        </div>
     </div>
-    </div>
- </div>
 </div>
 
 
@@ -59,7 +59,7 @@
          </div>
       </div>
       <div class="producto-footer">
-        <a routerLink="/details/{{item.id}}"><button class="button-detalle button1">Detalles</button></a>
+        <a routerLink="/details/{{item.id}}"><button class="button-detalle button1">Detalles <i class="fa-solid fa-circle-info"></i></button></a>
         <a href="#"><button class="button-add button1">Añadir <i class="fa-solid fa-cart-shopping"></i></button></a>
       </div>
      </div>

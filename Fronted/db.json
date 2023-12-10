@@ -235,18 +235,6 @@
       "id": 12
     },
     {
-      "name": "Taladro Petrul",
-      "price": "30",
-      "color": "Yellow",
-      "category": "Herramientas",
-      "description": "Taladro Petrul ",
-      "image": "https://cdn.shopify.com/s/files/1/0305/0550/0731/products/TaladroPretulMediaFoto1_1024x1024@2x.jpg?v=1625272412",
-      "quantity": 1,
-      "userId": 4,
-      "productId": 5,
-      "id": 13
-    },
-    {
       "name": "Martillo nuevo",
       "price": "10",
       "color": "Black",
@@ -257,6 +245,30 @@
       "userId": 13,
       "productId": 4,
       "id": 14
+    },
+    {
+      "name": "Martillo nuevo",
+      "price": "10",
+      "color": "Black",
+      "category": "Herramientas",
+      "description": "Martillo Pequeño",
+      "image": "https://www.servillavespaez.com/wp-content/uploads/2017/08/MA-02-A-458x458.jpg",
+      "quantity": 4,
+      "productId": 4,
+      "userId": null,
+      "id": 15
+    },
+    {
+      "name": "Taladro Petrul",
+      "price": "30",
+      "color": "Yellow",
+      "category": "Herramientas",
+      "description": "Taladro Petrul ",
+      "image": "https://cdn.shopify.com/s/files/1/0305/0550/0731/products/TaladroPretulMediaFoto1_1024x1024@2x.jpg?v=1625272412",
+      "quantity": 1,
+      "userId": 4,
+      "productId": 5,
+      "id": 16
     }
   ],
   "orders": [
@@ -283,14 +295,6 @@
       "totalPrice": 35.512,
       "userId": 3,
       "id": 3
-    },
-    {
-      "email": "",
-      "address": "",
-      "contact": "",
-      "totalPrice": 40.6,
-      "userId": 4,
-      "id": 4
     }
   ]
 }
