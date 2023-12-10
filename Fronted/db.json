@@ -141,6 +141,12 @@
       "email": "wiliampuntomorales@hotmail.com",
       "password": "asd123",
       "id": 12
+    },
+    {
+      "name": "wiliam",
+      "email": "wma.morales@yavirac.edu.ec",
+      "password": "1233",
+      "id": 13
     }
   ],
   "cart": [
@@ -239,6 +245,18 @@
       "userId": 4,
       "productId": 5,
       "id": 13
+    },
+    {
+      "name": "Martillo nuevo",
+      "price": "10",
+      "color": "Black",
+      "category": "Herramientas",
+      "description": "Martillo Pequeño",
+      "image": "https://www.servillavespaez.com/wp-content/uploads/2017/08/MA-02-A-458x458.jpg",
+      "quantity": 1,
+      "userId": 13,
+      "productId": 4,
+      "id": 14
     }
   ],
   "orders": [
@@ -270,33 +288,9 @@
       "email": "",
       "address": "",
       "contact": "",
-      "totalPrice": 35,
+      "totalPrice": 40.6,
       "userId": 4,
-      "id": 9
-    },
-    {
-      "email": "",
-      "address": "",
-      "contact": "",
-      "totalPrice": 35,
-      "userId": 4,
-      "id": 10
-    },
-    {
-      "email": "wma.morales@yavirac.edu.ec",
-      "address": "monjas",
-      "contact": "099589855",
-      "totalPrice": 51.8,
-      "userId": 4,
-      "id": 11
-    },
-    {
-      "email": "wiliampuntomorales45@gmail.com",
-      "address": "monjas",
-      "contact": "099589855",
-      "totalPrice": 26.89,
-      "userId": 4,
-      "id": 12
+      "id": 4
     }
   ]
 }

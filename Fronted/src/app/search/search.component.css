@@ -31,3 +31,9 @@
   background-color: #ffffffb6;
 }
 
+/* Adjustments for responsiveness */
+@media (max-width: 768px) {
+  .search-item {
+    width: 100%;
+  }
+}
