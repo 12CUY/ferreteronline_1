@@ -1,6 +1,10 @@
 # ferreteronline_1
 Es una ferreteria online que vende el usuario y ademas compra un usuario.
 
+# Estudiantes 
+1: WILIAM MANUEL MORALES 
+2: ROMMEL ESTEBAN SANDOVAL
+
 # instalar json
 npm install -g json-server
 
@@ -27,4 +31,7 @@ usar el nombre de la base de datos
 
 # iniciar el backend
 npm start
+
+
+# BASE DE DATOS MYSQL
 
