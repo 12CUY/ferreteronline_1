@@ -26,7 +26,7 @@
       <!-- Sección de cantidad con botones para ajustar la cantidad -->
       <div class="cantidad">
         <button (click)="handleQuantity('min')"><i class="fas fa-minus"></i></button>
-        <input type="text" value="{{productQuantity}}">
+        <input type="number" value="{{productQuantity}}">
         <button (click)="handleQuantity('max')"><i class="fas fa-plus"></i></button>
       </div>
       
@@ -34,7 +34,7 @@
       <!-- Botones para comprar, añadir al carrito o eliminar del carrito -->
       <div style="padding-left: 10%;">
 
-        <button class="button-comprar button1">Comprar Ahora</button>
+        <button class="button-comprar button1" (click)="compra()" >Comprar Ahora</button>
 
         <button *ngIf="!removeCart" class="button-add button1" (click)="addToCart()" style="margin-left: 10px;" >
           <i class="fas fa-plus"></i> Añadir al Carrito</button>

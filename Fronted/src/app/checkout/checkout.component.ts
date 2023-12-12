@@ -30,7 +30,7 @@ export class CheckoutComponent {
       });
 
       // Calcula el precio total con impuestos, envío y descuento
-      this.totalPrice = +(price + (price * 0.12) + 7).toFixed(2);
+      this.totalPrice = +(price + (price * 0.12) + 6).toFixed(2);
       console.warn(this.totalPrice); // Muestra el precio total en la consola
     });
   }
