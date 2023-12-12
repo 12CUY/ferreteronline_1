@@ -20,5 +20,7 @@ export class HomeComponent implements OnInit {
    this.product.trendyProducts().subscribe((data)=>{
     this.trendyProducts=data;
    });
+
+   
   }
 }
