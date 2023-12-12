@@ -8,6 +8,9 @@ import { ProductService } from '../services/product.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+detalle() {
+throw new Error('Method not implemented.');
+}
   popularProducts:undefined | product[];
   trendyProducts:undefined | product[];
   constructor(private product:ProductService){}
@@ -20,7 +23,11 @@ export class HomeComponent implements OnInit {
    this.product.trendyProducts().subscribe((data)=>{
     this.trendyProducts=data;
    });
-
-   
   }
+
+  
+  
+
+
+ 
 }

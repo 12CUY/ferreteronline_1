@@ -20,12 +20,13 @@
           <td>{{ cart.name }}</td>
           <td>$ {{ cart.price }}</td>
           <td>{{ cart.quantity }}</td>
+
           <!-- Botón para eliminar un producto del carrito -->
           <td>
             <button
               class="btn btn-danger"
               (click)="removeToCart(cart.id, cart.name)"
-              routerLink="/"
+              routerLink="/page/"
             >
             <i class="fa-solid fa-trash"></i> Eliminar
             </button>

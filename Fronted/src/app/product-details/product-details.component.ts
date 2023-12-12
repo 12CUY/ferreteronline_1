@@ -10,6 +10,13 @@ import Swal from 'sweetalert2';
   styleUrls: ['./product-details.component.css']
 })
 export class ProductDetailsComponent implements OnInit {
+compras() {
+throw new Error('Method not implemented.');
+}
+comprar: any;
+addToComp() {
+throw new Error('Method not implemented.');
+}
  productData:undefined | product;
  productQuantity:number=1;
  removeCart=false;
@@ -56,6 +63,25 @@ export class ProductDetailsComponent implements OnInit {
  }
 
 
+ compra(){
+  const Toast = Swal.mixin({
+    toast: true,
+    position: "top-end",
+    showConfirmButton: false,
+    timer: 1900,
+    timerProgressBar: true,
+    didOpen: (toast) => {
+      toast.onmouseenter = Swal.stopTimer;
+      toast.onmouseleave = Swal.resumeTimer;
+    }
+  });
+  Toast.fire({
+    icon: "success",
+    title: "Se Añadio Correctamente"
+  });
+  
+  };
+
  addToCart(){
 Swal.fire({
   title: 'Se Añadio Correctamente',
@@ -63,6 +89,8 @@ Swal.fire({
     icon: 'success',
 
 });
+
+
 
   if(this.productData){
     this.productData.quantity=this.productQuantity;

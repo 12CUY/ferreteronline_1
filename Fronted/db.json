@@ -147,6 +147,12 @@
       "email": "wma.morales@yavirac.edu.ec",
       "password": "1233",
       "id": 13
+    },
+    {
+      "name": "esteban",
+      "email": "estebandido@gmail.com",
+      "password": "12345",
+      "id": 14
     }
   ],
   "cart": [
@@ -199,18 +205,6 @@
       "id": 7
     },
     {
-      "name": "Martillo",
-      "price": "10",
-      "color": "Black",
-      "category": "Herramientas",
-      "description": "Martillo Pequeño",
-      "image": "https://www.servillavespaez.com/wp-content/uploads/2017/08/MA-02-A-458x458.jpg",
-      "quantity": 2,
-      "userId": 3,
-      "productId": 4,
-      "id": 10
-    },
-    {
       "name": "SERRUCHO",
       "price": "15.00",
       "color": "Orange",
@@ -257,18 +251,6 @@
       "userId": 4,
       "productId": 5,
       "id": 16
-    },
-    {
-      "name": "CLAVOS PARA MADERA",
-      "price": "5.00",
-      "color": "Gray",
-      "category": "Carpinteriass",
-      "description": "Clavos para madera varias medidas, fundas de 1 Kilo",
-      "image": "https://www.lacasadelcarpintero.com.ec/wp-content/uploads/2021/07/CLAG-CC-416x416.jpg",
-      "quantity": 1,
-      "userId": 3,
-      "productId": 2,
-      "id": 17
     }
   ],
   "orders": [
@@ -295,6 +277,14 @@
       "totalPrice": 35.512,
       "userId": 3,
       "id": 3
+    },
+    {
+      "email": "",
+      "address": "",
+      "contact": "",
+      "totalPrice": 39.6,
+      "userId": 3,
+      "id": 4
     }
   ]
 }
