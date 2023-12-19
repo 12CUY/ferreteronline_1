@@ -7,10 +7,11 @@ import {login, SignUp } from '../data-type';
   providedIn: 'root'
 })
 export class UserService {
+
   invalidUserAuth= new EventEmitter<boolean>(false);
-  constructor(private http:HttpClient,private router:Router) {}
+  constructor(private http:HttpClient, private router:Router) {}
   userSignUp(user:SignUp){
-    this.http.post("http://localhost:3000/users",user,{observe:'response'})
+    this.http.post("http://localhost:3000/api/user/signup",user,{observe:'response'})
     .subscribe((result)=>{
       console.warn(result);
       if(result){
@@ -20,12 +21,12 @@ export class UserService {
     });
   }
   userLogin(data:login){
-   this.http.get<SignUp[]>(`http://localhost:3000/users?email=${data.email}&password=${data.password}`,
+   this.http.get<SignUp[]>(`http://localhost:3000/api/user/signup?email=${data.email}&password=${data.password}`,
    {observe:'response'})
    .subscribe((result)=>{
     if(result && result.body?.length){
       this.invalidUserAuth.emit(false);
-      localStorage.setItem('user',JSON.stringify(result.body[0]));
+      localStorage.setItem('signup',JSON.stringify(result.body[0]));
       this.router.navigate(['/']);
     }else{
       this.invalidUserAuth.emit(true);
