@@ -11,6 +11,7 @@ import 'datatables.net';
   templateUrl: './vendedor-home.component.html',
   styleUrls: ['./vendedor-home.component.css']
 })
+
 export class VendedorHomeComponent implements OnInit, AfterViewInit {
   productList: product[] = [];
   productMessage: string | undefined;
@@ -29,6 +30,7 @@ export class VendedorHomeComponent implements OnInit, AfterViewInit {
     });
   }
 
+  // eliminar un producto con un identificador específico
   deleteProduct(id: number, productName: string) {
     Swal.fire({
       title: `¿Estás seguro de eliminar ${productName}?`,

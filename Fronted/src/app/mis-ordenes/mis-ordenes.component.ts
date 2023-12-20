@@ -47,7 +47,9 @@ export class MisOrdenesComponent implements OnInit {
 
   // Método para obtener la lista de órdenes
   getOrderList() {
-    // Llama al servicio para obtener la lista de órdenes y actualiza orderData con el resultado
+
+    // Llama al servicio para obtener la lista de órdenes y 
+    // actualiza orderData con el resultado
     this.product.orderList().subscribe((result) => {
       this.orderData = result;
     });

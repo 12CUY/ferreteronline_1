@@ -9,19 +9,26 @@ import Swal from 'sweetalert2';
   templateUrl: './product-details.component.html',
   styleUrls: ['./product-details.component.css']
 })
+
 export class ProductDetailsComponent implements OnInit {
-compras() {
+
+  compras() {
 throw new Error('Method not implemented.');
 }
+
 comprar: any;
+
 addToComp() {
 throw new Error('Method not implemented.');
 }
- productData:undefined | product;
- productQuantity:number=1;
- removeCart=false;
- cartData:product | undefined;
-  route: any;
+ productData:undefined | product;  //variables y objetos
+ productQuantity:number=1;        // variable que almacena la cantidad de productos
+ removeCart=false;                // variable booleana que indica si se debe quitar
+ cartData:product | undefined;     //variables y objetos
+  route: any;                     //variable que se declara pero no se inicializa
+
+    // Inyecta el servicio ActivatedRoute en el componente
+
  constructor(private activeRoute:ActivatedRoute,private product:ProductService){}
 
  ngOnInit(): void {
@@ -54,6 +61,9 @@ throw new Error('Method not implemented.');
    }
   });
  }
+
+
+ //  ajustar dinámicamente la cantidad del producto
  handleQuantity(val:string){
   if(this.productQuantity<20 && val==='max'){
    this.productQuantity+=1;
@@ -62,6 +72,8 @@ throw new Error('Method not implemented.');
   }
  }
 
+
+ // Método de compra de un producto del carrito
 
  compra(){
   const Toast = Swal.mixin({
@@ -118,6 +130,7 @@ Swal.fire({
 
 
 
+  // Método para eliminar un producto del carrito
 
  removeToCart(productId:number){
   Swal.fire({

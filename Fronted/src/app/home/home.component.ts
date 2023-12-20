@@ -7,23 +7,34 @@ import { ProductService } from '../services/product.service';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
+
+
 export class HomeComponent implements OnInit {
 detalle() {
 throw new Error('Method not implemented.');
 }
-  popularProducts:undefined | product[];
+
+  // Arreglo 
+  // que almacena productos
+  popularProducts:undefined | product[];  
   trendyProducts:undefined | product[];
+
+
   constructor(private product:ProductService){}
 
-  ngOnInit(): void {
-   this.product.popularProducts().subscribe((data)=>{
-    console.warn(data);
-    this.popularProducts=data;
-   });
-   this.product.trendyProducts().subscribe((data)=>{
-    this.trendyProducts=data;
-   });
-  }
+
+    // obtener datos sobre productos populares
+    ngOnInit(): void {
+    this.product.popularProducts().subscribe((data)=>{
+      console.warn(data);
+      this.popularProducts=data;
+    });
+
+    //obtener y asignar los datos de productos de tendencia
+    this.product.trendyProducts().subscribe((data)=>{
+      this.trendyProducts=data;
+    });
+    }
 
   
   
