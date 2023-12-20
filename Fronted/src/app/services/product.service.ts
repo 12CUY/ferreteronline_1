@@ -17,7 +17,7 @@ export class ProductService {
     return this.http.post(`${this.baseUrl}/products`, data);
   }
   productList() {
-    return this.http.get<product[]>('http://localhost:3000/api/products');
+    return this.http.get<product[]>(`${this.baseUrl}/products`);
     }
 
   deleteProduct(id: number) {
@@ -92,16 +92,16 @@ export class ProductService {
  orderList(){
   let userStore=localStorage.getItem('user');
   let userData=userStore && JSON.parse(userStore);
-  return this.http.get<order[]>('http://localhost:3000/api/orders?userId='+userData.id);
+  return this.http.get<order[]>('http://localhost:3000/orders?userId='+userData.id);
  }
  deleteCartItems(cartId:number){
-  return this.http.delete('http://localhost:3000/api/cart/'+cartId,{observe:'response'}).subscribe((result)=>{
+  return this.http.delete('http://localhost:3000/cart/'+cartId,{observe:'response'}).subscribe((result)=>{
     if(result){
       this.cartData.emit([]);
     }
   });
  }
  cancelOrder(orderId:number){
-  return this.http.delete('http://localhost:3000/api/orders/'+orderId);
+  return this.http.delete('http://localhost:3000/orders/'+orderId);
  }
 }
