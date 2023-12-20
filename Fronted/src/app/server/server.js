@@ -119,6 +119,47 @@ app.delete('/api/products/:id', (req, res) => {
   });
 });
 
+
+// Middleware para parsear el cuerpo de las solicitudes como JSON
+app.use(bodyParser.json());
+
+// Endpoint para el registro de vendedores
+app.post('/vendedor', (req, res) => {
+  const { name, password, email } = req.body;
+
+  const sql = 'INSERT INTO vendedor (name, password, email) VALUES (?, ?, ?)';
+  connection.query(sql, [name, password, email], (error, results) => {
+    if (error) {
+      console.error('Error al registrar vendedor:', error);
+      res.status(500).json({ error: 'Error interno del servidor' });
+    } else {
+      console.log('Registro exitoso:', results);
+      res.status(201).json({ message: 'Registro exitoso' });
+    }
+  });
+});
+
+// Endpoint para el inicio de sesión de vendedores
+app.post('/vendedor/login', (req, res) => {
+  const { email, password } = req.body;
+
+  const sql = 'SELECT * FROM vendedor WHERE email = ? AND password = ?';
+  connection.query(sql, [email, password], (error, results) => {
+    if (error) {
+      console.error('Error al realizar el inicio de sesión:', error);
+      res.status(500).json({ error: 'Error interno del servidor' });
+    } else {
+      if (results.length > 0) {
+        console.log('Usuario logueado:', results[0]);
+        res.status(200).json({ message: 'Inicio de sesión exitoso', vendedor: results[0] });
+      } else {
+        console.log('Credenciales inválidas');
+        res.status(401).json({ error: 'Credenciales inválidas' });
+      }
+    }
+  });
+});
+
 app.listen(port, () => {
   console.log(`Servidor Express escuchando en http://localhost:${port}`);
 });
