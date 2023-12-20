@@ -79,7 +79,7 @@ export class ProductService {
   });
  }
  removeToCart(cartId:number){
-  return this.http.delete('http://localhost:3000/api/cart/'+cartId);
+  return this.http.delete('http://localhost:3000/cart/'+cartId);
  }
  currentCart(){
   let userStore = localStorage.getItem('user');
@@ -87,7 +87,7 @@ export class ProductService {
   return this.http.get<cart[]>('http://localhost:3000/cart?userId='+userData.id);
  }
  orderNow(data:order){
-  return this.http.post('http://localhost:3000/api/orders',data);
+  return this.http.post('http://localhost:3000/orders',data);
  }
  orderList(){
   let userStore=localStorage.getItem('user');

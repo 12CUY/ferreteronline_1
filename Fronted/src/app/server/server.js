@@ -160,6 +160,54 @@ app.post('/vendedor/login', (req, res) => {
   });
 });
 
+
+
+
+// Obtener todos los elementos del carrito
+app.get('/', (req, res) => {
+  db.query('SELECT * FROM cart', (err, results) => {
+    if (err) {
+      console.error(err);
+      res.status(500).send('Error al obtener elementos del carrito');
+    } else {
+      res.json(results);
+    }
+  });
+});
+
+// Agregar un elemento al carrito
+app.post('/', (req, res) => {
+  const { name, price, color, category, description, image, quantity, productId, userId } = req.body;
+
+  const sql = 'INSERT INTO cart (name, price, color, category, description, image, quantity, productId, userId) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)';
+  const values = [name, price, color, category, description, image, quantity, productId, userId];
+
+  db.query(sql, values, (err, results) => {
+    if (err) {
+      console.error(err);
+      res.status(500).send('Error al agregar elemento al carrito');
+    } else {
+      res.json({ message: 'Elemento agregado al carrito con éxito', id: results.insertId });
+    }
+  });
+});
+
+// Eliminar un elemento del carrito
+app.delete('/:cartId', (req, res) => {
+  const cartId = req.params.cartId;
+
+  const sql = 'DELETE FROM cart WHERE id = ?';
+  db.query(sql, [cartId], (err, results) => {
+    if (err) {
+      console.error(err);
+      res.status(500).send('Error al eliminar elemento del carrito');
+    } else {
+      res.json({ message: 'Elemento eliminado del carrito con éxito' });
+    }
+  });
+});
+
+
 app.listen(port, () => {
   console.log(`Servidor Express escuchando en http://localhost:${port}`);
 });

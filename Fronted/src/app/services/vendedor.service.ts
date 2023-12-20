@@ -69,6 +69,7 @@ export class VendedorService {
       // Manejar el error
       console.error('No se encuentra logueado:', error);
       this.isLoginError.emit(true);
+
     }
   }
 }
