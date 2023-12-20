@@ -4,6 +4,7 @@
     <div *ngIf="!showLogin" class="user-signup">
       <h1> Registro de Cliente </h1>
       <form #userSignUp="ngForm" (ngSubmit)="signUp(userSignUp.value)" class="common-form">
+        
         <input type="text" ngModel class="form-input" placeholder="Ingresa tu Nombre" name="name"  minlenght="5" maxlength="20">
         <input type="email" class="form-input" placeholder="Ingresa tu Correo" name="email" ngModel #email="ngModel" required email>
         <p class="invalid-input"><span *ngIf="email.invalid && email.touched">Dirección de Correo Invalida</span></p>
@@ -11,6 +12,7 @@
         <p class="invalid-input"><span *ngIf="password.invalid && password.touched">Porfavor Ingresa un Clave</span></p>
         <button class="form-button btn btn-primary">Registrarse</button>
         <a (click)="openLogin()">Tienes una cuenta? <span class="click-aqui">  Iniciar Sesion</span></a>
+      
       </form>
     </div>
  
@@ -18,6 +20,7 @@
     <div *ngIf="showLogin" class="user-login">
       <h1> Bienvenido Cliente </h1>
       <form #userLogin="ngForm" class="common-form" (ngSubmit)="login(userLogin.value)">
+        
         <p class="error-p">{{authError}}</p>
         <input type="email" class="form-input" placeholder="Ingresa tu Correo" name="email" ngModel #email="ngModel" required email>
         <p class="invalid-input"><span *ngIf="email.invalid && email.touched">Porfavor Ingresa un Correo</span></p>
@@ -25,6 +28,7 @@
         <p class="invalid-input"><span *ngIf="password.invalid && password.touched">Porfavor Ingresa un Clave</span></p>
         <button [disabled]="userLogin.invalid" class="btn btn-primary">Ingresar</button>
         <a (click)="openSignUp()">Desea crear una cuenta? <span class="click-aqui"> Registrate</span></a>
+     
       </form>
     </div>
 </div>

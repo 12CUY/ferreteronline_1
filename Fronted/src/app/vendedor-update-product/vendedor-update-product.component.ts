@@ -14,11 +14,13 @@ export class VendedorUpdateProductComponent implements OnInit {
   productMessage: undefined | string;
 
   constructor(
-    private route: ActivatedRoute,
-    private product: ProductService,
-    private router: Router
+    private route: ActivatedRoute,    // obtener información sobre la ruta activa
+    private product: ProductService,  // encapsular la lógica  obtención y manipulación de datos
+    private router: Router            //  navegación entre diferentes componentes o rutas
   ) {}
 
+
+  // obtener los parámetros de la ruta id 
   ngOnInit(): void {
     let productId = this.route.snapshot.paramMap.get('id');
     console.warn(productId);
@@ -29,8 +31,13 @@ export class VendedorUpdateProductComponent implements OnInit {
       });
   }
 
+
+  // seguimiento de los datos que se están procesando data
   submit(data: product) {
     console.warn(data);
+
+  // editando un producto existente 
+
     if (this.productData) {
       data.id = this.productData.id;
     }

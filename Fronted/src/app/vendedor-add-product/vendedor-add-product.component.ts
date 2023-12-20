@@ -33,4 +33,4 @@ export class VendedorAddProductComponent implements OnInit {
   }
 }
 
-//holasdw
+//confirmado

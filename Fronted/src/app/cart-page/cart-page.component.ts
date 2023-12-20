@@ -12,6 +12,7 @@ import Swal from 'sweetalert2';
   styleUrls: ['./cart-page.component.css']
 })
 export class CartPageComponent implements OnInit {
+
   // Arreglo 
   // que almacena los detalles de los productos en el carrito
   cartData:cart[] | undefined;
@@ -26,9 +27,12 @@ export class CartPageComponent implements OnInit {
     discount: 0
   }
 
+    // Inyecta el servicio ProductService en el componente
+
   constructor(private product:ProductService, private router:Router){}
 
   ngOnInit(): void {
+
     //cargar los detalles del carrito al iniciar el componente
     this.loadDetails();
   }
@@ -46,8 +50,10 @@ export class CartPageComponent implements OnInit {
         cancelButtonText: 'Cancelar'
       }).then((result) => {
         if (result.isConfirmed) {
+
           // Si el usuario hace clic en "Sí, eliminar"
           this.product.removeToCart(cartId).subscribe(() => {
+
             // Puedes agregar cualquier lógica adicional aquí
             // (por ejemplo, actualizar el total del carrito, etc.)
             Swal.fire(
@@ -55,6 +61,7 @@ export class CartPageComponent implements OnInit {
               `El producto ${productName} ha sido eliminado del carrito.`,
               'success'
             ).then(() => {
+              
               // Recargar los detalles después de la eliminación
               this.loadDetails();
             });

@@ -12,15 +12,19 @@ import Swal from 'sweetalert2';
 export class UserAuthComponent implements OnInit {
   showLogin:boolean=true;
   authError:string="";
+
+
  constructor(private user:UserService,private product:ProductService){}
  ngOnInit(): void {
   this.user.userAuthReload();
  }
+
 // usar sweetalert
  signUp(data:SignUp){
    this.user.userSignUp(data);
    Swal.fire('Registro exitoso', '¡Gracias por registrarte!', 'success');
  }
+
  login(data:login){
   this.user.userLogin(data);
   this.user.invalidUserAuth.subscribe((result)=>{
@@ -32,12 +36,15 @@ export class UserAuthComponent implements OnInit {
    }
   });
  }
+
  openSignUp(){
   this.showLogin=false;
  }
+ 
  openLogin(){
   this.showLogin=true;
  }
+ 
  localCartToRemoteCart(){
   let data = localStorage.getItem('localCart');
   let user= localStorage.getItem('user');
