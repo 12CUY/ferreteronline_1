@@ -82,7 +82,42 @@ app.get('/api/products/:id', (req, res) => {
   });
 });
 
+// Endpoint para actualizar un producto por su ID
+app.put('/api/products/:id', (req, res) => {
+  const productId = req.params.id;
+  const updatedProduct = req.body;
 
+  connection.query('UPDATE products SET ? WHERE id = ?', [updatedProduct, productId], (error, results) => {
+    if (error) {
+      console.error('Error al actualizar el producto:', error);
+      res.status(500).json({ error: 'Error al procesar la solicitud', details: error });
+    } else {
+      if (results.affectedRows > 0) {
+        res.status(200).json({ message: 'Producto actualizado exitosamente' });
+      } else {
+        res.status(404).json({ error: 'Producto no encontrado' });
+      }
+    }
+  });
+});
+
+// Endpoint para eliminar un producto por su ID
+app.delete('/api/products/:id', (req, res) => {
+  const productId = req.params.id;
+
+  connection.query('DELETE FROM products WHERE id = ?', [productId], (error, results) => {
+    if (error) {
+      console.error('Error al eliminar el producto:', error);
+      res.status(500).json({ error: 'Error al procesar la solicitud', details: error });
+    } else {
+      if (results.affectedRows > 0) {
+        res.status(200).json({ message: 'Producto eliminado exitosamente' });
+      } else {
+        res.status(404).json({ error: 'Producto no encontrado' });
+      }
+    }
+  });
+});
 
 app.listen(port, () => {
   console.log(`Servidor Express escuchando en http://localhost:${port}`);
